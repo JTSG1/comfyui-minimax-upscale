@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import shutil
 import subprocess
 
 import runpod
@@ -131,6 +132,8 @@ def copy_output_to_persistent_storage(job_id, output_file):
 
     print(f"Persistent output: {persistent_output}")
 
+    return persistent_output
+
 def handler(job):
 
     job_id = job["id"]  # Access the job ID from the request
@@ -193,12 +196,12 @@ def handler(job):
 
     print(f"Output file: {output_file}")
 
-    copy_output_to_persistent_storage(job_id, output_file)
+    persistent_output = copy_output_to_persistent_storage(job_id, output_file)
 
     return {
         "job_id": job_id,
         "status": "completed",
-        "output_file": str(output_file)
+        "output_file": str(persistent_output)
     }
 
 runpod.serverless.start({"handler": handler})  # Required
