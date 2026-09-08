@@ -87,16 +87,16 @@
   "124": {
     "inputs": {
       "scheduler": "simple",
-      "steps": 35,
+      "steps": 8,
       "denoise": 1,
       "model": [
-        "127",
+        "143",
         0
       ]
     },
     "class_type": "BasicScheduler",
     "_meta": {
-      "title": "BasicScheduler"
+      "title": "BasicScheduler (Turbo 4 Steps)"
     }
   },
   "125": {
@@ -130,7 +130,7 @@
   "126": {
     "inputs": {
       "model": [
-        "127",
+        "143",
         0
       ],
       "conditioning": [
@@ -296,6 +296,20 @@
     "class_type": "LoadAudio",
     "_meta": {
       "title": "Load Audio"
+    }
+  },
+  "143": {
+    "inputs": {
+      "model": [
+        "127",
+        0
+      ],
+      "lora_name": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+      "strength_model": 1.0
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "MiniMax H3 Ref2V Turbo LoRA (4 Step)"
     }
   }
 }
