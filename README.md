@@ -69,8 +69,9 @@ python util/submit.py \
 ## Repository files
 
 - `Dockerfile` - ComfyUI image and model setup.
-- `handler.py` - RunPod handler, input decoding, workflow execution, and output persistence.
+- `src/handler.py` - RunPod handler, input decoding, and output persistence.
+- `src/comfyui.py` - ComfyUI workflow submission, polling, and output lookup.
 - `comfy-jobs/minimax+lora.json` - Active ComfyUI API workflow used by the handler.
 - `comfy-jobs/minimax+upscale.json` - Alternate ComfyUI API workflow.
-- `workflow.json` - Original ComfyUI workflow export.
+- `workflow.json` - Original ComfyUI workflow export; not used by the worker.
 - `util/submit.py` - Command-line submission and result polling utility.

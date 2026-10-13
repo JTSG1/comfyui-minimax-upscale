@@ -29,7 +29,8 @@ RUN pip install --no-cache-dir \
 # Worker application
 # ---------------------------------------------------------------------------
 
-COPY handler.py /handler.py
+COPY src/handler.py /handler.py
+COPY src/comfyui.py /comfyui.py
 
 COPY extra_model_paths.yaml /comfyui/extra_model_paths.yaml
 
